@@ -12,7 +12,7 @@ namespace Sioen.Experiments.Data.Repositories
         public static IQueryable<User> AllUsersOlderThan(this IQueryable<User> users, int age)
         {
             return from u in users
-                   where u.BirthDate.Date > DateTime.Now.Date.AddYears(age)
+                   where u.BirthDate.Date < DateTime.Now.Date.AddYears(-age)
                    select u;
         }
     }

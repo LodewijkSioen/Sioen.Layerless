@@ -6,6 +6,7 @@ using Sioen.Experiments.Data.Repositories;
 
 namespace Sioen.Experiments.Tests.Data.Queries
 {
+    [TestFixture]
     public class TestUserRepository : TestFixtureRepository<User>
     {
         protected override IQueryable<User> InitializeOfflineData()
@@ -16,6 +17,7 @@ namespace Sioen.Experiments.Tests.Data.Queries
             }.AsQueryable();
         }
 
+        [Test]
         public void TestAllUsersOlderThan()
         {
             //Act
