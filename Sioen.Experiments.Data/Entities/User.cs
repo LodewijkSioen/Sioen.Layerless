@@ -5,10 +5,10 @@ namespace Sioen.Experiments.Data.Entities
 {
     public class User : Entity
     {
-        public string UserName { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public DateTime BirthDate { get; set; }
+        public virtual string UserName { get; set; }
+        public virtual string FirstName { get; set; }
+        public virtual string LastName { get; set; }
+        public virtual string Email { get; set; }
+        public virtual DateTime BirthDate { get; set; }
     }
 }

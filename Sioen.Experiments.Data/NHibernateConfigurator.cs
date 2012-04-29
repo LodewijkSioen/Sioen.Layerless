@@ -17,8 +17,8 @@ namespace Sioen.Experiments.Infrastructure.Data
                .DataBaseIntegration(db =>
                {
                    db.ConnectionStringName = "CE";
-                   db.Dialect<MsSqlCe40Dialect>();
-                   db.BatchSize = 500;
+                   db.Dialect<MsSqlCe40CustomDialect>();
+                   db.BatchSize = 500;                   
                })
                .CurrentSessionContext<WebSessionContext>()
                .SessionFactory().GenerateStatistics();
@@ -26,6 +26,11 @@ namespace Sioen.Experiments.Infrastructure.Data
             AddMappings(config);
 
             return config;
+        }
+
+        public static void BuildDatabase()
+        {
+            new NHibernate.Tool.hbm2ddl.SchemaExport(BuildConfiguration()).Create(false, true);
         }
 
         private static void AddMappings(Configuration config)

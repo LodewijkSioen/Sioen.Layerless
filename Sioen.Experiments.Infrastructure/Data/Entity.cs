@@ -4,7 +4,7 @@ namespace Sioen.Experiments.Infrastructure.Data
 {
     public class Entity
     {
-        public Guid Id { get; set; }
+        public virtual Guid Id { get; protected set; }
 
         public override bool Equals(object obj)
         {
