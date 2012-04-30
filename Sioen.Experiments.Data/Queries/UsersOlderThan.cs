@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NHibernate;
 using NHibernate.Criterion;
 using Sioen.Experiments.Data.Entities;
@@ -8,15 +9,15 @@ namespace Sioen.Experiments.Data.Queries
 {
     public class UsersOlderThan : Query<User>
     {
-        private int _age;
+        private DateTime _birthDate;
         public UsersOlderThan(int age)
         {
-            _age = age;
+            _birthDate = DateTime.Now.Date.AddYears(-age);
         }
 
         public override IList<User> Execute(ISession session)
         {
-            return session.CreateCriteria<User>().Add(Expression.Gt("BirthDate", _age)).List<User>();
+            return session.CreateCriteria<User>().Add(Expression.Lt("BirthDate", _birthDate)).List<User>();
         }
     }
 }

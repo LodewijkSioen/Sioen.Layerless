@@ -334,7 +334,8 @@ namespace NHibernate.Dialect
             RegisterFunction("unicode", new StandardSQLFunction("unicode", NHibernateUtil.Int32));
             RegisterFunction("upper", new StandardSQLFunction("upper"));
             RegisterFunction("trim", new AnsiTrimEmulationFunction());
-            RegisterFunction("concat", new VarArgsSQLFunction(NHibernateUtil.String, "(", "", ")"));
+            RegisterFunction("concat", new VarArgsSQLFunction(NHibernateUtil.String, "(", "+", ")"));
+
 
             //System Functions
             RegisterFunction("coalesce", new VarArgsSQLFunction("coalesce(", ",", ")"));
@@ -430,6 +431,6 @@ namespace NHibernate.Dialect
         public override bool SupportsCircularCascadeDeleteConstraints
         {
             get { return false; }
-        }
+        }       
     }
 }

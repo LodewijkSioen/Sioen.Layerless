@@ -59,6 +59,7 @@
     <Compile Include="NHibernateConfigurator.cs" />
     <Compile Include="NHibernateInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\UserNamesStartingWith.cs" />
     <Compile Include="Queries\UsersOlderThan.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>

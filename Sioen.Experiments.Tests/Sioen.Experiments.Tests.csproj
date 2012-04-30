@@ -44,6 +44,7 @@
       <HintPath>..\packages\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -55,7 +56,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Repositories\TestFixtureRepository.cs" />
+    <Compile Include="Data\CreateDatabase.cs" />
+    <Compile Include="Data\Queries\TestUserQueries.cs" />
+    <Compile Include="Data\TestFixtureNHibernate.cs" />
     <Compile Include="Data\Repositories\TestUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -66,7 +69,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Queries\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Web\" />
   </ItemGroup>

@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using NUnit.Framework;
 using Sioen.Experiments.Data.Entities;
-using Sioen.Experiments.Data.Repositories;
+using Sioen.Experiments.Data.Queries;
 
 namespace Sioen.Experiments.Tests.Data.Queries
 {
-    public class TestUserRepository : TestFixtureNHibernate<User>
+    public class TestUserQueries : TestFixtureNHibernate<User>
     {
         protected override IQueryable<User> CreateSandboxData()
         {
@@ -16,11 +19,14 @@ namespace Sioen.Experiments.Tests.Data.Queries
             }.AsQueryable();
         }
 
-        [Test]
+        [Test]        
         public void TestAllUsersOlderThan()
         {
+            //Arrange
+            var query = new UsersOlderThan(10);
+
             //Act
-            var result = Data.AllUsersOlderThan(10).ToList();
+            var result = query.Execute(Session);
 
             //Assert
             Assert.That(result, Has.Count.EqualTo(1));
@@ -28,10 +34,13 @@ namespace Sioen.Experiments.Tests.Data.Queries
         }
 
         [Test]
-        public void TestUserNamesStartsWith()
+        public void TestUserNamesStartingWith()
         {
+            //Arrange
+            var query = new UserNamesStartingWith() { Name = "J" };
+
             //Act
-            var result = Data.UserNamesStartingWith("J").ToList();
+            var result = query.Execute(Session);
 
             //Assert
             Assert.That(result, Has.Count.EqualTo(1));

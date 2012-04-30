@@ -15,5 +15,12 @@ namespace Sioen.Experiments.Data.Repositories
                    where u.BirthDate.Date < DateTime.Now.Date.AddYears(-age)
                    select u;
         }
+
+        public static IQueryable<User> UserNamesStartingWith(this IQueryable<User> users, string name)
+        {
+            return from u in users
+                   where u.UserName.StartsWith(name)
+                   select u;
+        }
     }
 }
