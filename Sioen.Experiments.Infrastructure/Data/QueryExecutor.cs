@@ -35,7 +35,7 @@ namespace Sioen.Experiments.Infrastructure.Data
 
         public T Get<T>(Query<T> query)
         {
-            return Query(query).SingleOrDefault(null);
+            return Query(query).SingleOrDefault();
         }
 
         public IList<T> Query<T>(Query<T> query)
@@ -57,7 +57,6 @@ namespace Sioen.Experiments.Infrastructure.Data
             }
 
             _session.Dispose();
-            CurrentSessionContext.Unbind(_session.SessionFactory);
         }
     }
 }

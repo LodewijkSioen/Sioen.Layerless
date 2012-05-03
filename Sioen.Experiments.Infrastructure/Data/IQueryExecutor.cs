@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Sioen.Experiments.Infrastructure.Data
 {
-    public interface IQueryExecutor
+    public interface IQueryExecutor : IDisposable
     {
         void Save(Entity entity);
         void Delete(Entity entity);

@@ -23,7 +23,6 @@ namespace Sioen.Experiments.Infrastructure.Installers
                     .UsingFactoryMethod(k =>
                     {
                         var session = k.Resolve<ISessionFactory>().OpenSession();
-                        CurrentSessionContext.Bind(session);
                         return session;
                     })
                     .LifestyleTransient()                
