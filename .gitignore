@@ -12,3 +12,6 @@ packages
 # Visual Studio
 *.suo
 *.user
+
+# Database
+*.sdf
