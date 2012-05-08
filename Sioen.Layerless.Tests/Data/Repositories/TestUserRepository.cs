@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using NUnit.Framework;
-using Sioen.Layerless.Data.Entities;
-using Sioen.Layerless.Data.Repositories;
+using Sioen.Layerless.Logic.Entities;
+using Sioen.Layerless.Logic.Repositories;
 
 namespace Sioen.Layerless.Tests.Data.Queries
 {

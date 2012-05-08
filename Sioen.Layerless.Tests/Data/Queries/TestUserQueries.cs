@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using Sioen.Layerless.Data.Entities;
-using Sioen.Layerless.Data.Queries;
+using Sioen.Layerless.Logic.Entities;
+using Sioen.Layerless.Logic.Queries;
 
 namespace Sioen.Layerless.Tests.Data.Queries
 {

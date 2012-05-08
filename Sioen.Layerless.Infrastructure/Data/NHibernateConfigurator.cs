@@ -33,6 +33,11 @@ namespace Sioen.Layerless.Infrastructure.Data
             new NHibernate.Tool.hbm2ddl.SchemaExport(BuildConfiguration()).Create(false, true);
         }
 
+        public static void DropDatabase()
+        {
+            new NHibernate.Tool.hbm2ddl.SchemaExport(BuildConfiguration()).Drop(false, true);
+        }
+
         private static void AddMappings(Configuration config)
         {
             var mapper = new ModelMapper();

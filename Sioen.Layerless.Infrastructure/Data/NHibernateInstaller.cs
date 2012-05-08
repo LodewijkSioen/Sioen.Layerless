@@ -4,7 +4,7 @@ using NHibernate.Cfg;
 using NHibernate.Context;
 using Sioen.Layerless.Infrastructure.Data;
 
-namespace Sioen.Layerless.Infrastructure.Installers
+namespace Sioen.Layerless.Infrastructure.Data
 {
     public class NHibernateInstaller : IWindsorInstaller
     {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using NHibernate;
 using NHibernate.Criterion;
-using Sioen.Layerless.Data.Entities;
+using Sioen.Layerless.Logic.Entities;
 using Sioen.Layerless.Infrastructure.Data;
 
-namespace Sioen.Layerless.Data.Queries
+namespace Sioen.Layerless.Logic.Queries
 {
     public class UsersOlderThan : Query<User>
     {

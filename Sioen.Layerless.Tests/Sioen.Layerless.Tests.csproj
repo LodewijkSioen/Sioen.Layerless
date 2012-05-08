@@ -76,17 +76,13 @@
     <Folder Include="Web\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sioen.Layerless.Data\Sioen.Layerless.Data.csproj">
+    <ProjectReference Include="..\Sioen.Layerless.Logic\Sioen.Layerless.Logic.csproj">
       <Project>{7b0721d7-ce29-4cf6-a599-779b2a814b8d}</Project>
-      <Name>Sioen.Experiments.Data</Name>
+      <Name>Sioen.Layerless.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sioen.Layerless.Infrastructure\Sioen.Layerless.Infrastructure.csproj">
       <Project>{2692fe71-62e0-4c0e-8894-46a73ead0355}</Project>
-      <Name>Sioen.Experiments.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sioen.Layerless.Web\Sioen.Layerless.Web.csproj">
-      <Project>{492dcc04-1120-43a5-bbc6-cc6050508a14}</Project>
-      <Name>Sioen.Experiments.Web</Name>
+      <Name>Sioen.Layerless.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

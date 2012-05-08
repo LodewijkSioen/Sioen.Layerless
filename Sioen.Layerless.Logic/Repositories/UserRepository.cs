@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sioen.Layerless.Data.Entities;
+using Sioen.Layerless.Logic.Entities;
 
-namespace Sioen.Layerless.Data.Repositories
+namespace Sioen.Layerless.Logic.Repositories
 {
     public static class UserRepository
     {
         public static IQueryable<User> AllUsersOlderThan(this IQueryable<User> users, int age)
         {
             return from u in users
-                   where u.BirthDate.Date < DateTime.Now.Date.AddYears(-age)
+                   where u.BirthDate.HasValue && u.BirthDate.Value.Date < DateTime.Now.Date.AddYears(-age)
                    select u;
         }
 

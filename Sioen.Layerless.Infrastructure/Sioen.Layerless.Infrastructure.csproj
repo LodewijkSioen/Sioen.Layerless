@@ -54,8 +54,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\Command.cs" />
+    <Compile Include="Command\CommandExecutor.cs" />
+    <Compile Include="Command\ICommandExecutor.cs" />
+    <Compile Include="Data\AdHocQuery.cs" />
     <Compile Include="Data\Entity.cs" />
     <Compile Include="Data\IQueryExecutor.cs" />
+    <Compile Include="Data\MsSqlCe40CustomDialect.cs" />
+    <Compile Include="Data\NHibernateConfigurator.cs" />
+    <Compile Include="Data\NHibernateInstaller.cs" />
     <Compile Include="Data\Query.cs" />
     <Compile Include="Data\QueryExecutor.cs" />
     <Compile Include="InfrastructureInstaller.cs" />
@@ -64,7 +71,6 @@
     <Compile Include="Web\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Web\InjectionModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

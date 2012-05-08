@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NHibernate.Criterion;
-using Sioen.Layerless.Data.Entities;
+using Sioen.Layerless.Logic.Entities;
 using Sioen.Layerless.Infrastructure.Data;
 
-namespace Sioen.Layerless.Data.Queries
+namespace Sioen.Layerless.Logic.Queries
 {
     public class UserNamesStartingWith : Query<User>
     {

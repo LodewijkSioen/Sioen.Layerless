@@ -3,7 +3,7 @@ using System.Reflection;
 using Castle.MicroKernel;
 using Castle.MicroKernel.ComponentActivator;
 
-namespace Castle.Windsor
+namespace Castle.MicroKernel
 {
     public static class WindsorExtension
     {

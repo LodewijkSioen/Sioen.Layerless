@@ -1,16 +1,13 @@
 ﻿using NHibernate.Mapping.ByCode.Conformist;
-using Sioen.Layerless.Data.Entities;
+using Sioen.Layerless.Logic.Entities;
 
-namespace Sioen.Layerless.Data.Mappings
+namespace Sioen.Layerless.Logic.Mappings
 {
     public class UserMapping : ClassMapping<User>
     {
         public UserMapping()
         {
             Property(p => p.UserName);
-            Property(p => p.FirstName);
-            Property(p => p.LastName);
-            Property(p => p.BirthDate);
             Property(p => p.BirthDate);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using Sioen.Layerless.Infrastructure.Command;
 using Sioen.Layerless.Infrastructure.Data;
 
 namespace Sioen.Layerless.Infrastructure
@@ -11,6 +12,8 @@ namespace Sioen.Layerless.Infrastructure
         {
             container.Register(
                 Component.For<IQueryExecutor>().ImplementedBy<QueryExecutor>()
+                    .LifestylePerWebRequest(),
+                Component.For<ICommandExecutor>().ImplementedBy<CommandExecutor>()
                     .LifestylePerWebRequest()
             );
         }
