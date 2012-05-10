@@ -14,10 +14,12 @@ namespace Sioen.Layerless.Logic.Commands
 {
     public class CreateDatabaseCommand : Command
     {
+        public NHibernate.Cfg.Configuration Config { get; set; }
+
         public override void Execute()
         {
-            NHibernateConfigurator.DropDatabase();
-            NHibernateConfigurator.BuildDatabase();
+            SchemaHelper.DropDatabase(Config);
+            SchemaHelper.BuildDatabase(Config);
         }
     }
 }

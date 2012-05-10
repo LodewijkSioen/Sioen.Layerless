@@ -24,8 +24,8 @@ namespace Sioen.Layerless.Tests.Data
             if (_useRealDatabase)
             {
                 Database.Create();
-                NHibernateConfigurator.BuildDatabase();
-                _sessionFactory = NHibernateConfigurator.BuildConfiguration().BuildSessionFactory();                
+                SchemaHelper.BuildDatabase();
+                _sessionFactory = SchemaHelper.BuildConfiguration().BuildSessionFactory();                
             }
         }
         

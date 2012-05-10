@@ -18,7 +18,7 @@ namespace Sioen.Layerless.Web
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            _container = new WindsorContainer()
+            _container = new WindsorContainer()            
                 .Install(FromAssembly.InThisApplication());
 
             Routing.DefineRoutes(RouteTable.Routes);
