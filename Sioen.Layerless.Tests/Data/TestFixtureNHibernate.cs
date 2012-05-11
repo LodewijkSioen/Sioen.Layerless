@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Configuration;
 using System.Linq;
 using NHibernate;
+using NHibernate.Cfg;
 using NHibernate.Linq;
 using NUnit.Framework;
 using Sioen.Layerless.Infrastructure.Data;
+using Sioen.Layerless.Infrastructure.Data.Configurators;
+using Sioen.Layerless.Logic.Mappings;
 
 namespace Sioen.Layerless.Tests.Data
 {    
@@ -24,8 +26,14 @@ namespace Sioen.Layerless.Tests.Data
             if (_useRealDatabase)
             {
                 Database.Create();
-                SchemaHelper.BuildDatabase();
-                _sessionFactory = SchemaHelper.BuildConfiguration().BuildSessionFactory();                
+                var config = new Configuration()
+                    .Proxy(p => p.ProxyFactoryFactory<NHibernate.Bytecode.DefaultProxyFactoryFactory>());
+                config.SessionFactory().GenerateStatistics();
+                new SqlCeConfigurator("CE").Extend(config);
+                new MappingConfigurator<UserMapping>().Extend(config);
+
+                SchemaHelper.BuildDatabase(config);
+                _sessionFactory = config.BuildSessionFactory();                
             }
         }
         
@@ -63,7 +71,7 @@ namespace Sioen.Layerless.Tests.Data
         private Boolean ConnectToDatabase()
         {
             bool result;
-            Boolean.TryParse(ConfigurationManager.AppSettings["UseRealDatabase"], out result);
+            Boolean.TryParse(System.Configuration.ConfigurationManager.AppSettings["UseRealDatabase"], out result);
 
             return result;
         }

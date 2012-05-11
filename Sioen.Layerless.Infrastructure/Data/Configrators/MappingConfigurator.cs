@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using NHibernate.Mapping.ByCode;
 using NHibernate.Mapping.ByCode.Conformist;
-using Sioen.Layerless.Infrastructure.Data;
 
-namespace Sioen.Layerless.Logic.Mappings
+namespace Sioen.Layerless.Infrastructure.Data.Configurators
 {
-    public class MappingConfigurator : INHibernateConfigurator
+    public class MappingConfigurator<T> : INHibernateConfigurator
     {
         public void Extend(NHibernate.Cfg.Configuration config)
         {
@@ -20,8 +19,8 @@ namespace Sioen.Layerless.Logic.Mappings
                 classCustomizer.Table(ReservedTableNameHandler(type));
             };
 
-            mapper.AddMappings(from t in this.GetType().Assembly.GetExportedTypes()
-                               where t.IsSubclassOf(typeof(ClassMapping<>))
+            mapper.AddMappings(from t in typeof(T).Assembly.GetExportedTypes()
+                               where t.Namespace == typeof(T).Namespace
                                select t);
 
             config.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());

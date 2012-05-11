@@ -58,6 +58,7 @@
     <Compile Include="Command\CommandExecutor.cs" />
     <Compile Include="Command\ICommandExecutor.cs" />
     <Compile Include="Data\AdHocQuery.cs" />
+    <Compile Include="Data\Configrators\MappingConfigurator.cs" />
     <Compile Include="Data\Configrators\WebConfigurator.cs" />
     <Compile Include="Data\Entity.cs" />
     <Compile Include="Data\INHibernateConfigurator.cs" />

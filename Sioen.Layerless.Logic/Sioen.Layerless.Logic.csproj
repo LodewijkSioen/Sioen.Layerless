@@ -58,7 +58,6 @@
     <Compile Include="Commands\CreateDatabaseCommand.cs" />
     <Compile Include="Commands\PopulateDatabaseCommand.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Mappings\MappingConfigurator.cs" />
     <Compile Include="Mappings\UserMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\UserNamesStartingWith.cs" />
