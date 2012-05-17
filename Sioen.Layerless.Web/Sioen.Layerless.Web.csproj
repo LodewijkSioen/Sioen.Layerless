@@ -80,6 +80,7 @@
     <Content Include="App_Data\Web.sdf" />
     <Content Include="Global.asax" />
     <Content Include="Pages\Default.aspx" />
+    <Content Include="Pages\User\UserForm.aspx" />
     <Content Include="Pages\User\UserList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -93,6 +94,12 @@
     </Compile>
     <Compile Include="Pages\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User\UserForm.aspx.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\User\UserForm.aspx.designer.cs">
+      <DependentUpon>UserForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\User\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>

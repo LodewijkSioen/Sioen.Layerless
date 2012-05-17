@@ -12,7 +12,7 @@ using Sioen.Layerless.Infrastructure.Data;
 
 namespace Sioen.Layerless.Logic.Commands
 {
-    public class CreateDatabaseCommand : Command
+    public class BuildDatabaseCommand : Command
     {
         public NHibernate.Cfg.Configuration Config { get; set; }
 

@@ -30,12 +30,7 @@ namespace Sioen.Layerless.Infrastructure.Data
                 .Proxy(p => p.ProxyFactoryFactory<NHibernate.Bytecode.DefaultProxyFactoryFactory>());
 #if DEBUG
             config.SessionFactory().GenerateStatistics();
-#endif
-
-            foreach(var extender in kernel.ResolveAll<INHibernateConfigurator>())
-            {
-                extender.Extend(config);
-            }
+#endif      
             return config;
         }
     }

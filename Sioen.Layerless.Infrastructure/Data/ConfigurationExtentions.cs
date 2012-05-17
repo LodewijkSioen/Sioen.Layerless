@@ -1,14 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NHibernate.Cfg;
+using NHibernate.Context;
+using NHibernate.Dialect;
 using NHibernate.Mapping.ByCode;
-using NHibernate.Mapping.ByCode.Conformist;
 
-namespace Sioen.Layerless.Infrastructure.Data.Configurators
+namespace Sioen.Layerless.Infrastructure.Data
 {
-    public class MappingConfigurator<T> : INHibernateConfigurator
+    public static class ConfigurationExtentions
     {
-        public void Extend(NHibernate.Cfg.Configuration config)
+        public static Configuration ForWeb(this Configuration config)
+        {
+            return config.CurrentSessionContext<WebSessionContext>();
+        }
+
+        public static Configuration ForSqlServerCE(this Configuration config, string connectionStringName)
+        {
+            return config
+               .DataBaseIntegration(db =>
+               {
+                   db.ConnectionStringName = connectionStringName;
+                   db.Dialect<MsSqlCe40CustomDialect>();
+                   db.BatchSize = 500;
+               });
+        }
+
+        public static Configuration WithMappingsFromAssemblyOf<T>(this Configuration config)
         {
             var mapper = new ModelMapper();
 
@@ -24,6 +44,7 @@ namespace Sioen.Layerless.Infrastructure.Data.Configurators
                                select t);
 
             config.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
+            return  config;
         }
 
         private static readonly List<string> ReservedSqlKeywords = new List<string> { "Order", "User", "Index" };

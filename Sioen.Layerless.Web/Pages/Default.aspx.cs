@@ -8,12 +8,17 @@ namespace Sioen.Layerless.Web.Pages
 {
     public partial class Home : BasePage
     {
-        public string CreateDatabase([Control()]string hiddenId)
+        public string CreateDatabase()
         {
-            Command.Execute(new CreateDatabaseCommand());
+            Command.Execute(new BuildDatabaseCommand());
             Command.Execute(new PopulateDatabaseCommand());
 
             return GetRouteUrl("Default", null);
+        }
+
+        public string TestBinding([Control()]string hiddenId)
+        {
+            return hiddenId;
         }
     }
 }

@@ -5,7 +5,6 @@ using NHibernate.Cfg;
 using NHibernate.Linq;
 using NUnit.Framework;
 using Sioen.Layerless.Infrastructure.Data;
-using Sioen.Layerless.Infrastructure.Data.Configurators;
 using Sioen.Layerless.Logic.Mappings;
 
 namespace Sioen.Layerless.Tests.Data
@@ -29,8 +28,7 @@ namespace Sioen.Layerless.Tests.Data
                 var config = new Configuration()
                     .Proxy(p => p.ProxyFactoryFactory<NHibernate.Bytecode.DefaultProxyFactoryFactory>());
                 config.SessionFactory().GenerateStatistics();
-                new SqlCeConfigurator("CE").Extend(config);
-                new MappingConfigurator<UserMapping>().Extend(config);
+                config.ForSqlServerCE("CE").WithMappingsFromAssemblyOf<UserMapping>();
 
                 SchemaHelper.BuildDatabase(config);
                 _sessionFactory = config.BuildSessionFactory();                

@@ -55,7 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CreateDatabaseCommand.cs" />
+    <Compile Include="Commands\BuildDatabaseCommand.cs" />
+    <Compile Include="Commands\CreateDatabaseFile.cs" />
     <Compile Include="Commands\PopulateDatabaseCommand.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Mappings\UserMapping.cs" />

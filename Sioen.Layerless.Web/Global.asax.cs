@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Routing;
-using System.Web.Security;
-using System.Web.SessionState;
 using Castle.MicroKernel;
+using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
+using Sioen.Layerless.Infrastructure.Data;
 using Sioen.Layerless.Infrastructure.Web;
+using Sioen.Layerless.Logic.Mappings;
 
 namespace Sioen.Layerless.Web
 {
@@ -18,8 +16,13 @@ namespace Sioen.Layerless.Web
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            _container = new WindsorContainer()            
+            _container = new WindsorContainer()
                 .Install(FromAssembly.InThisApplication());
+
+            _container.Resolve<NHibernate.Cfg.Configuration>()
+                .ForWeb()
+                .ForSqlServerCE("CE")
+                .WithMappingsFromAssemblyOf<UserMapping>();
 
             Routing.DefineRoutes(RouteTable.Routes);
         }
