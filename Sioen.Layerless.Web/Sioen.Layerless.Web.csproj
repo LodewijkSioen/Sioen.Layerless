@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Pages\User\UserForm.aspx.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\User\UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
@@ -147,7 +148,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>53536</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:51533/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

@@ -12,7 +12,7 @@ namespace Sioen.Layerless.Web
         {
             routes.MapPageRoute("Default", "", "~/Pages/Default.aspx");
             routes.MapPageRoute("UserList", "users/", "~/Pages/User/UserList.aspx");;
-            routes.MapPageRoute("UserAction", "user/{action}/{*id}", "~/Pages/User/UserDetail.aspx");
+            routes.MapPageRoute("UserAction", "user/{action}/{*id}", "~/Pages/User/UserForm.aspx");
 
             //routes.MapPageRoute("Customer", "customer/{id}", "~/Pages/Customer/Index.aspx");
         }

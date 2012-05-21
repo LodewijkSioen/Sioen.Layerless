@@ -34,8 +34,13 @@ namespace Sioen.Layerless.Infrastructure.Data
 
             mapper.BeforeMapClass += (modelInspector, type, classCustomizer) =>
             {
-                classCustomizer.Id(c => c.Column(type.Name + "Id"));
-                classCustomizer.Id(c => c.Generator(Generators.GuidComb));
+                var idProperty = typeof(Entity).GetProperty("Id");
+
+                classCustomizer.Id(idProperty, c => 
+                { 
+                    c.Column(type.Name + "Id");                    
+                    c.Generator(Generators.GuidComb);
+                });
                 classCustomizer.Table(ReservedTableNameHandler(type));
             };
 

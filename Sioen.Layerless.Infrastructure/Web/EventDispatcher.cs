@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.ModelBinding;
@@ -26,7 +27,8 @@ namespace Sioen.Layerless.Infrastructure.Web
         {
             var result = HandleCommand(e as CommandEventArgs);
             Redirect(result);
-        }      
+        }
+
 
         public void OnEvent(object sender, EventArgs e)
         {
