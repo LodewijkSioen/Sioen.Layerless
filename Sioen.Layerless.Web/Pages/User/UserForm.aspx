@@ -1,13 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserForm.aspx.cs" Inherits="Sioen.Layerless.Web.Pages.User.UserForm" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Title="Edit User" Language="C#" AutoEventWireup="true" CodeBehind="UserForm.aspx.cs" Inherits="Sioen.Layerless.Web.Pages.User.UserForm" MasterPageFile="~/Pages/Default.Master" %>
+<asp:Content ContentPlaceHolderID="body" runat="server">
     <div>
         <asp:FormView ID="Form" ItemType="Sioen.Layerless.Logic.Entities.User" SelectMethod="SelectUser" InsertMethod="InsertUser" UpdateMethod="UpdateUser" DeleteMethod="DeleteUser" runat="server">
             <ItemTemplate>
@@ -26,6 +18,4 @@
             </EditItemTemplate>
         </asp:FormView>    
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>

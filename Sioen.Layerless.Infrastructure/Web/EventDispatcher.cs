@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace Sioen.Layerless.Infrastructure.Web
 {
+    //http://blogs.microsoft.co.il/blogs/oric/archive/2012/02/22/asp-net-web-forms-and-mvvm.aspx
     public class EventDispatcher
     {
         BasePage _page;

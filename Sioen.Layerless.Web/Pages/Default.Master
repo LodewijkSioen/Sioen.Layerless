@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Sioen.Layerless.Web.Pages.Default" %>
+<%
+    Bundles.Reference("Content/Styles");
+    Bundles.Reference("Content/Scripts");
+%>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <%: Bundles.RenderStylesheets() %>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrap">
+        <div id="header">
+            <h1>Layerless sample application</h1>
+        </div>
+        <div id="nav">
+            <ul>
+                <li>Users</li>
+            </ul>
+        </div>
+        <div id="main">
+            <asp:ContentPlaceHolder ID="body" runat="server" />
+        </div>
+        <div id="sidebar">
+            test
+            <asp:ContentPlaceHolder ID="sidebar" runat="server" />
+        </div>
+        <div id="footer">
+            &copy; 2012 Lodewijk Sioen
+        </div>
+    </div>
+    </form>
+    <%: Bundles.RenderScripts() %>
+</body>
+</html>

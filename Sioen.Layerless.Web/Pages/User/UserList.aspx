@@ -1,13 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserList.aspx.cs" Inherits="Sioen.Layerless.Web.Pages.User.UserList" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Title="List of Users" Language="C#" AutoEventWireup="true" CodeBehind="UserList.aspx.cs" Inherits="Sioen.Layerless.Web.Pages.User.UserList" MasterPageFile="~/Pages/Default.Master" %>
+<asp:Content ContentPlaceHolderID="body" runat="server">
     <div>
         <asp:Repeater runat="server" ItemType="Sioen.Layerless.Logic.Entities.User" SelectMethod="ListUsers">
             <HeaderTemplate><ul></HeaderTemplate>
@@ -18,6 +10,4 @@
             </FooterTemplate>
         </asp:Repeater>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
