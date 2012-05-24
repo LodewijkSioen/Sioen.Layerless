@@ -133,13 +133,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Web.sdf" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Styles\normalize.css" />
     <Content Include="Global.asax" />
     <Content Include="Pages\Default.aspx" />
     <Content Include="Pages\User\UserForm.aspx" />
     <Content Include="Pages\User\UserList.aspx" />
     <Content Include="Content\Scripts\jquery-1.7.2.js" />
-    <Content Include="Content\Styles\TwoColumnLayout.css" />
+    <None Include="Content\Styles\TwoColumnLayout.less" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +208,7 @@
   <ItemGroup>
     <Content Include="Views\Web.config" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

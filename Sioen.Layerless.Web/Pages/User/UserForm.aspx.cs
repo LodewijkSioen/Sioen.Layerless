@@ -13,15 +13,44 @@ namespace Sioen.Layerless.Web.Pages.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (RouteData.Values["action"].ToString() == "new")
+            switch (RouteData.Values["action"].ToString())
             {
-                Form.DefaultMode = FormViewMode.Insert;
+                case "new":
+                    Form.DefaultMode = FormViewMode.Insert;
+                    break;
+                case "edit":
+                    Form.DefaultMode = FormViewMode.Edit;
+                    break;
+                default:
+                    Form.DefaultMode = FormViewMode.ReadOnly;
+                    break;
             }
         }
 
-        public Sioen.Layerless.Logic.Entities.User SelectUser([RouteData]Guid id)
+        public Sioen.Layerless.Logic.Entities.User SelectUser([RouteData]Guid? id)
         {
-            return Db.Get<Sioen.Layerless.Logic.Entities.User>(id);
-        }        
+            if (id.HasValue)
+            {
+                return Db.Get<Sioen.Layerless.Logic.Entities.User>(id.Value);
+            }
+            return new Logic.Entities.User();
+        }
+
+        public void InsertUser(Sioen.Layerless.Logic.Entities.User user)
+        {
+
+        }
+
+        public void UpdateUser(Sioen.Layerless.Logic.Entities.User user)
+        {
+
+        }
+
+        public void DeleteUser(Sioen.Layerless.Logic.Entities.User user)
+        {
+            TryUpdateModel(user);
+
+            Response.RedirectToRoute("UserList");
+        }
     }
 }

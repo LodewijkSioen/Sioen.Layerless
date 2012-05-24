@@ -13,26 +13,25 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div id="wrap">
         <div id="header">
-            <h1>Layerless sample application</h1>
+            <h1><img src="../Content/Images/logo.png" /> Sioen.Layerless Sample Application</h1>
         </div>
-        <div id="nav">
-            <ul>
-                <li>Users</li>
-            </ul>
+
+        <div class="colmask rightmenu">
+            <div class="colleft">
+                <div class="col1wrap">
+                    <div class="col1">
+                        <asp:ContentPlaceHolder ID="body" runat="server" />
+                    </div>
+                </div>
+                <div class="col2">
+                    dfs
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                </div>
+            </div>
         </div>
-        <div id="main">
-            <asp:ContentPlaceHolder ID="body" runat="server" />
-        </div>
-        <div id="sidebar">
-            test
-            <asp:ContentPlaceHolder ID="sidebar" runat="server" />
-        </div>
-        <div id="footer">
-            &copy; 2012 Lodewijk Sioen
-        </div>
-    </div>
+
+        <div id="footer">&copy; 2012 Lodewijk Sioen</div>
     </form>
     <%: Bundles.RenderScripts() %>
 </body>
