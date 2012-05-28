@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Web.Routing;
+using AutoMapper;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using Sioen.Layerless.Infrastructure.Data;
 using Sioen.Layerless.Infrastructure.Web;
+using Sioen.Layerless.Logic.Entities;
 using Sioen.Layerless.Logic.Mappings;
+using Sioen.Layerless.Web.Pages.User;
 
 namespace Sioen.Layerless.Web
 {
@@ -25,6 +28,8 @@ namespace Sioen.Layerless.Web
                 .WithMappingsFromAssemblyOf<UserMapping>();
 
             Routing.DefineRoutes(RouteTable.Routes);
+
+            Mapper.CreateMap<User, UserModel>();
         }
 
         protected void Session_Start(object sender, EventArgs e)

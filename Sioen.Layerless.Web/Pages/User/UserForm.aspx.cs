@@ -27,33 +27,41 @@ namespace Sioen.Layerless.Web.Pages.User
             }
         }
 
-        public Sioen.Layerless.Logic.Entities.User SelectUser([RouteData]Guid? id)
+        public UserModel SelectUser([RouteData]Guid? id)
         {
-            return id.HasValue ? 
-                Db.Get<Sioen.Layerless.Logic.Entities.User>(id.Value) :
-                new Logic.Entities.User();
+            return id.HasValue ?
+                Db.Get<Sioen.Layerless.Logic.Entities.User>(id.Value).To<UserModel>() :
+                new UserModel();
         }
 
         public void InsertUser(Sioen.Layerless.Logic.Entities.User user)
         {
-
-        }
-
-        public void UpdateUser(Guid id)
-        {
-            var user = Db.Get<Sioen.Layerless.Logic.Entities.User>(id);
-            TryUpdateModel(user);
+            var entity = new Logic.Entities.User
+            {
+                UserName = user.UserName
+            };
 
             Db.Save(user);
 
             Response.RedirectToRoute("UserList");
         }
 
+        public void UpdateUser(UserModel user)
+        {
+            var entity = Db.Get<Sioen.Layerless.Logic.Entities.User>(user.Id);
+            entity.UserName = user.UserName;
+
+            Db.Save(entity);
+
+            Response.RedirectToRoute("UserList");
+        }
+
         public void DeleteUser(Guid id)
         {
-            var user = Db.Get<Sioen.Layerless.Logic.Entities.User>(id);
-            TryUpdateModel(user);
+            var user = Db.Get<Logic.Entities.User>(id);
 
+            Db.Delete(user);
+            
             Response.RedirectToRoute("UserList");
         }
     }
