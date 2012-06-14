@@ -37,5 +37,30 @@ namespace Sioen.Layerless.Tests.Data.Queries
             Assert.That(result, Has.Count.EqualTo(1));
             Assert.That(result[0].UserName, Is.EqualTo("John"));
         }
+
+        [Test]
+        public void TestCompositeQuery() 
+        { 
+            //act
+            var result = Data
+                .AllUsersOlderThan(8)
+                .UserNamesStartingWith("E")
+                .ToList();
+
+            //Assert
+            Assert.That(result, Has.Count.EqualTo(1));
+            Assert.That(result[0].UserName, Is.EqualTo("Eddy"));
+        }
+
+        [Test]
+        public void TestProjection()
+        {
+            //Act
+            var result = Data.Select(u => u.UserName).ToList();
+
+            //Assert
+            Assert.That(LogSqlInterceptor.LastExecutedQuery, Is.EqualTo("select user0_.UserName as col_0_0_ from [User] user0_"));            
+        }
+
     }
 }

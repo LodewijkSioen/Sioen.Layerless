@@ -25,6 +25,7 @@ namespace Sioen.Layerless.Infrastructure.Data
                    db.ConnectionStringName = connectionStringName;
                    db.Dialect<MsSqlCe40CustomDialect>();
                    db.BatchSize = 500;
+                   db.LogSqlInConsole = true;
                });
         }
 

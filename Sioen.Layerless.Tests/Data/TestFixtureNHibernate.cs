@@ -21,6 +21,8 @@ namespace Sioen.Layerless.Tests.Data
 
         public TestFixtureNHibernate()
         {
+            log4net.Config.XmlConfigurator.Configure();
+
             _useRealDatabase = ConnectToDatabase();
             if (_useRealDatabase)
             {
@@ -28,6 +30,7 @@ namespace Sioen.Layerless.Tests.Data
                 var config = new Configuration()
                     .Proxy(p => p.ProxyFactoryFactory<NHibernate.Bytecode.DefaultProxyFactoryFactory>());
                 config.SessionFactory().GenerateStatistics();
+                config.SetInterceptor(new LogSqlInterceptor());
                 config.ForSqlServerCE("CE").WithMappingsFromAssemblyOf<UserMapping>();
 
                 SchemaHelper.BuildDatabase(config);
