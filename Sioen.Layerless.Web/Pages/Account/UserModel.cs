@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Sioen.Layerless.Web.Pages.User
+namespace Sioen.Layerless.Web.Pages.Account
 {
     public class UserModel
     {

@@ -9,7 +9,7 @@ using Sioen.Layerless.Infrastructure.Data;
 using Sioen.Layerless.Infrastructure.Web;
 using Sioen.Layerless.Logic.Entities;
 using Sioen.Layerless.Logic.Mappings;
-using Sioen.Layerless.Web.Pages.User;
+using Sioen.Layerless.Web.Pages.Account;
 
 namespace Sioen.Layerless.Web
 {

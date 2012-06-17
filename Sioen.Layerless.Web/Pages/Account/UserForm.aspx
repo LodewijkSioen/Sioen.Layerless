@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Edit User" Language="C#" AutoEventWireup="true" CodeBehind="UserForm.aspx.cs" Inherits="Sioen.Layerless.Web.Pages.User.UserForm" MasterPageFile="~/Pages/Default.Master" %>
+﻿<%@ Page Title="Edit User" Language="C#" AutoEventWireup="true" CodeBehind="UserForm.aspx.cs" Inherits="Sioen.Layerless.Web.Pages.Account.UserForm" MasterPageFile="~/Pages/Default.Master" %>
 <asp:Content ContentPlaceHolderID="body" runat="server">
     <div>
         <asp:FormView ID="Form" ItemType="Sioen.Layerless.Web.Pages.User.UserModel" SelectMethod="SelectUser" InsertMethod="InsertUser" UpdateMethod="UpdateUser" DeleteMethod="DeleteUser" DataKeyNames="Id" runat="server">

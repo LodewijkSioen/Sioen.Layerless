@@ -141,8 +141,8 @@
     <Content Include="Content\Styles\normalize.css" />
     <Content Include="Global.asax" />
     <Content Include="Pages\Default.aspx" />
-    <Content Include="Pages\User\UserForm.aspx" />
-    <Content Include="Pages\User\UserList.aspx" />
+    <Content Include="Pages\Account\UserForm.aspx" />
+    <Content Include="Pages\Account\UserList.aspx" />
     <Content Include="Content\Scripts\jquery-1.7.2.js" />
     <None Include="Content\Styles\TwoColumnLayout.less" />
     <Content Include="Web.config" />
@@ -167,21 +167,21 @@
     <Compile Include="Pages\Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\User\UserForm.aspx.cs">
+    <Compile Include="Pages\Account\UserForm.aspx.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\User\UserForm.aspx.designer.cs">
+    <Compile Include="Pages\Account\UserForm.aspx.designer.cs">
       <DependentUpon>UserForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\User\UserList.aspx.cs">
+    <Compile Include="Pages\Account\UserList.aspx.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\User\UserList.aspx.designer.cs">
+    <Compile Include="Pages\Account\UserList.aspx.designer.cs">
       <DependentUpon>UserList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\User\UserModel.cs" />
+    <Compile Include="Pages\Account\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Routing.cs" />
   </ItemGroup>

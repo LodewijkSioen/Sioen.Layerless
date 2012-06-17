@@ -11,8 +11,8 @@ namespace Sioen.Layerless.Web
         public static void DefineRoutes(RouteCollection routes)
         {
             routes.MapPageRoute("Default", "", "~/Pages/Default.aspx");
-            routes.MapPageRoute("UserList", "users/", "~/Pages/User/UserList.aspx");;
-            routes.MapPageRoute("UserAction", "user/{action}/{*id}", "~/Pages/User/UserForm.aspx");
+            routes.MapPageRoute("UserList", "users/", "~/Pages/Account/UserList.aspx");;
+            routes.MapPageRoute("UserAction", "user/{action}/{*id}", "~/Pages/Account/UserForm.aspx");
 
             //routes.MapPageRoute("Customer", "customer/{id}", "~/Pages/Customer/Index.aspx");
         }

@@ -15,12 +15,26 @@ namespace Sioen.Layerless.Logic.Commands
 
         public override void Execute()
         {
-            var Admin = new User
-            {
-                UserName = "Admin"
+            var users = new List<User> {
+                new User{ UserName = "Admin" },
+                new User { UserName = "John" },
+                new User { UserName = "Paul" },
+                new User { UserName = "Ringo" },
+                new User { UserName = "George" },
+                new User { UserName = "Kurt" },
+                new User { UserName = "Krist" },
+                new User { UserName = "Dave" },
+                new User { UserName = "Thom" },
+                new User { UserName = "Jonny" },
+                new User { UserName = "Ed" },
+                new User { UserName = "Colin" },
+                new User { UserName = "Phil" },
+                new User { UserName = "Steve" },
+                new User { UserName = "Glen" },
+                new User { UserName = "Sid" }
             };
 
-            Db.Save(Admin);
+            users.ForEach(u => Db.Save(u));
         }
     }
 }

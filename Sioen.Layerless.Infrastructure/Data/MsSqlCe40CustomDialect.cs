@@ -400,7 +400,7 @@ namespace NHibernate.Dialect
         /// </summary>
         public override bool SupportsVariableLimit
         {
-            get { return false; }
+            get { return true; }
         }
 
         /// <summary>

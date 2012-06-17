@@ -3,7 +3,7 @@ using System.Web.ModelBinding;
 using System.Web.UI.WebControls;
 using Sioen.Layerless.Infrastructure.Web;
 
-namespace Sioen.Layerless.Web.Pages.User
+namespace Sioen.Layerless.Web.Pages.Account
 {
     public partial class UserForm : BasePage
     {

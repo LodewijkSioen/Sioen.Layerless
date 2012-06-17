@@ -20,7 +20,7 @@ namespace Sioen.Layerless.Tests.Data.Queries
         public void TestAllUsersOlderThan()
         {
             //Act
-            var result = Data.AllUsersOlderThan(10).ToList();
+            var result = Data.OlderThan(10).ToList();
 
             //Assert
             Assert.That(result, Has.Count.EqualTo(1));
@@ -31,7 +31,7 @@ namespace Sioen.Layerless.Tests.Data.Queries
         public void TestUserNamesStartsWith()
         {
             //Act
-            var result = Data.UserNamesStartingWith("J").ToList();
+            var result = Data.UserNameStartingWith("J").ToList();
 
             //Assert
             Assert.That(result, Has.Count.EqualTo(1));
@@ -43,13 +43,14 @@ namespace Sioen.Layerless.Tests.Data.Queries
         { 
             //act
             var result = Data
-                .AllUsersOlderThan(8)
-                .UserNamesStartingWith("E")
+                .OlderThan(8)
+                .UserNameStartingWith("E")
                 .ToList();
 
             //Assert
             Assert.That(result, Has.Count.EqualTo(1));
             Assert.That(result[0].UserName, Is.EqualTo("Eddy"));
+            var x = LogSqlInterceptor.LastExecutedQuery;
         }
 
         [Test]

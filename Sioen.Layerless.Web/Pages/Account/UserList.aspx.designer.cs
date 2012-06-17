@@ -7,18 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sioen.Layerless.Web.Pages.User {
+namespace Sioen.Layerless.Web.Pages.Account {
     
     
-    public partial class UserForm {
+    public partial class UserList {
         
         /// <summary>
-        /// Form control.
+        /// ListOfUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView Form;
+        protected global::System.Web.UI.WebControls.ListView ListOfUsers;
+        
+        /// <summary>
+        /// pager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataPager pager;
     }
 }
