@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Sioen.Layerless.Infrastructure.Web;
+using Sioen.Layerless.Logic.Entities;
 using Sioen.Layerless.Logic.Repositories;
 
 namespace Sioen.Layerless.Web.Pages.Account
@@ -16,9 +17,9 @@ namespace Sioen.Layerless.Web.Pages.Account
 
         }
 
-        public IQueryable<Sioen.Layerless.Logic.Entities.User> ListUsers()
+        public IQueryable<UserModel> ListUsers()
         {
-            return Db.Query<Sioen.Layerless.Logic.Entities.User>();
+            return Db.Query<User>().Select(u => new UserModel{Id=u.Id, UserName=u.UserName});
         }
     }
 }
