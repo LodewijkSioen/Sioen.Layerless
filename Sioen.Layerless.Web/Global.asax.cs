@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web.Routing;
-using AutoMapper;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
@@ -29,9 +28,7 @@ namespace Sioen.Layerless.Web
                 .ForSqlServerCE("CE")
                 .WithMappingsFromAssemblyOf<UserMapping>();
 
-            Routing.DefineRoutes(RouteTable.Routes);
-
-            Mapper.CreateMap<User, UserModel>();
+            Routing.DefineRoutes(RouteTable.Routes);            
         }
 
         protected void Session_Start(object sender, EventArgs e)

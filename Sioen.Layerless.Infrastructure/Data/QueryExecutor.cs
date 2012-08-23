@@ -38,6 +38,11 @@ namespace Sioen.Layerless.Infrastructure.Data
             return Query(query).SingleOrDefault();
         }
 
+        public T Load<T>(Guid id)
+        {
+            return _session.Load<T>(id);
+        }
+
         public IList<T> Query<T>(Query<T> query)
         {
             return query.Execute(_session);

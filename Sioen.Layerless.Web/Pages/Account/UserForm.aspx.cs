@@ -2,6 +2,8 @@
 using System.Web.ModelBinding;
 using System.Web.UI.WebControls;
 using Sioen.Layerless.Infrastructure.Web;
+using Sioen.Layerless.Logic.Entities;
+using Omu.ValueInjecter;
 
 namespace Sioen.Layerless.Web.Pages.Account
 {
@@ -25,26 +27,26 @@ namespace Sioen.Layerless.Web.Pages.Account
 
         public UserModel SelectUser([RouteData]Guid? id)
         {
-            return id.HasValue ?
-                Db.Get<Sioen.Layerless.Logic.Entities.User>(id.Value).To<UserModel>() :
-                new UserModel();
+            var user = new UserModel();
+            if(id.HasValue) user.InjectFrom(Db.Get<User>(id.Value));
+            return user;
         }
 
-        public void InsertUser(Sioen.Layerless.Logic.Entities.User user)
+        public void InsertUser(UserModel user)
         {
             var entity = new Logic.Entities.User
             {
                 UserName = user.UserName
             };
 
-            Db.Save(user);
+            Db.Save(entity);
 
             Response.RedirectToRoute("UserList");
         }
 
         public void UpdateUser(UserModel user)
         {
-            var entity = Db.Get<Sioen.Layerless.Logic.Entities.User>(user.Id);
+            var entity = Db.Get<User>(user.Id);
             entity.UserName = user.UserName;
 
             Db.Save(entity);

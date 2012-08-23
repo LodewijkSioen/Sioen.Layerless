@@ -23,7 +23,7 @@ namespace Sioen.Layerless.Infrastructure.Data
                .DataBaseIntegration(db =>
                {
                    db.ConnectionStringName = connectionStringName;
-                   db.Dialect<MsSqlCe40CustomDialect>();
+                   db.Dialect<CustomMsSqlCe40Dialect>();
                    db.BatchSize = 500;
                    db.LogSqlInConsole = true;
                });

@@ -60,7 +60,7 @@ namespace Sioen.Layerless.Tests.Data.Queries
             var result = Data.Select(u => u.UserName).ToList();
 
             //Assert
-            Assert.That(LogSqlInterceptor.LastExecutedQuery, Is.EqualTo("select user0_.UserName as col_0_0_ from [User] user0_"));            
+            Assert.That(LogSqlInterceptor.LastExecutedQuery, Is.EqualTo("select user0_.UserName as col_0_0_ from \"User\" user0_"));            
         }
 
     }

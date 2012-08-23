@@ -11,5 +11,7 @@ namespace Sioen.Layerless.Web.Pages.Account
         public Guid Id { get; set; }
         [Required]
         public string UserName { get; set; }
+        
+        public DateTime? BirthDate { get; set; }
     }
 }
