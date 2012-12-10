@@ -7,7 +7,6 @@ TestResults
 
 # NuGet
 packages
-.nuget
 
 # Visual Studio
 *.suo
